@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["H6JN5UFH44.com.drewclarke.fivehundred"],
+        "components": [
+          { "/": "/five-hundred-site/join/*", "comment": "Kitchen Table: Five Hundred table invites" }
+        ]
+      }
+    ]
+  },
+  "appclips": {
+    "apps": ["H6JN5UFH44.com.drewclarke.fivehundred.Clip"]
+  }
+}
