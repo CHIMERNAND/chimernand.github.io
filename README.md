@@ -1,5 +1,7 @@
-# chimernand.github.io
+# clarkestudios.com
 
-Root of the GitHub Pages domain. It exists so Apple can read `/.well-known/apple-app-site-association`, which lets
-table invite links (`/five-hundred-site/join/?code=…`) open Kitchen Table: Five Hundred directly (universal links)
-and, later, its App Clip. The game's website is at [/five-hundred-site/](https://chimernand.github.io/five-hundred-site/).
+The Clarke Studios home page, served by GitHub Pages at https://clarkestudios.com/ (DNS on Cloudflare).
+
+- `index.html`, `404.html`, `assets/`: the studio site. Fonts (Fraunces, Instrument Sans; SIL Open Font License) are hosted here so the site makes no third-party requests.
+- `/.well-known/apple-app-site-association`: lets Kitchen Table: Five Hundred invite links (`/five-hundred-site/join/…`) open the app and its App Clip. Don't move or rename it.
+- Game pages live in their own repos and appear under this domain: `five-hundred-site` → `/five-hundred-site/`, `periapsis-site` → `/periapsis-site/`.
