@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join a dig — Ashen Veins</title>
+<meta name="robots" content="noindex">
+<meta name="apple-itunes-app" content="app-id=6827199202">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Fraunces;src:url(/assets/fonts/fraunces.woff2) format("woff2");font-weight:300 900;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(/assets/fonts/instrument-sans.woff2) format("woff2");font-weight:400 700;font-display:swap}
+:root{color-scheme:dark;--bg:#111318;--bg2:#1a1d24;--ink:#efe9df;--mute:#a8a49c;--line:#2b2f38;--amber:#f0a54a;--glow:#ffd08a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:32rem;margin:0 auto;padding:48px 20px 64px;text-align:center}
+h1{font:500 1.9rem/1.15 Fraunces,serif;margin:0 0 8px}
+.sub{color:var(--mute)}
+.code{font:600 2.6rem/1.2 ui-monospace,monospace;letter-spacing:.25em;color:var(--glow);background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:.5rem 0 .5rem .25em;margin:24px 0}
+.btn{display:inline-block;background:var(--amber);color:#111318;text-decoration:none;font-weight:600;padding:14px 28px;border-radius:12px;margin:8px 0}
+a{color:var(--amber)}
+:focus-visible{outline:2px solid var(--glow);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+<main>
+  <h1>You're invited to a dig</h1>
+  <p class="sub">Ashen Veins · joining is always free</p>
+  <div class="code" id="code" aria-label="Room code"></div>
+  <p id="open-wrap"><a class="btn" id="open" href="#">Open in Ashen Veins</a></p>
+  <p><a id="store" href="https://apps.apple.com/app/id6827199202">Get Ashen Veins on the App Store</a></p>
+  <p class="sub" id="how">No app yet? Install Ashen Veins from the App Store, open Online and enter the code above under Join a room.</p>
+  <p class="sub"><a href="../">About the game</a></p>
+</main>
+<script>
+  var q = new URLSearchParams(location.search);
+  var c = (q.get("code") || q.get("join") || "").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 8);
+  var el = document.getElementById("code");
+  if (c) {
+    el.textContent = c;
+    document.getElementById("open").href = "ashenveins://join/" + c;
+  } else {
+    el.hidden = true;
+    document.getElementById("open-wrap").hidden = true;
+    document.getElementById("how").textContent = "This invite link is missing its room code. Ask the host to send it again, or enter the code under Online, Join a room.";
+  }
+</script>
+</body>
+</html>
