@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rust &amp; Shine — Scrub old tools back to new · Clarke Studios</title>
+<meta name="description" content="Rust &amp; Shine is a calm restoration game for iPhone from Clarke Studios. Degrease, wire-brush and polish old tools with your finger until they shine. No ads, no tracking.">
+<link rel="canonical" href="https://clarkestudios.com/rust-and-shine-site/">
+<meta property="og:title" content="Rust &amp; Shine — Scrub old tools back to new">
+<meta property="og:description" content="Grimy wrenches, rusty trowels, a tarnished brass bell. Clean each one with your finger until it shines.">
+<meta property="og:image" content="https://clarkestudios.com/rust-and-shine-site/img/wire-brush.webp">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Fraunces;src:url(/assets/fonts/fraunces.woff2) format("woff2");font-weight:300 900;font-display:swap}
+@font-face{font-family:Fraunces;src:url(/assets/fonts/fraunces-italic.woff2) format("woff2");font-style:italic;font-weight:300 900;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(/assets/fonts/instrument-sans.woff2) format("woff2");font-weight:400 700;font-display:swap}
+:root{color-scheme:dark;--bg:#16120e;--bg2:#211b15;--ink:#f1e8dc;--mute:#b3a796;--line:#342b22;--violet:#e59a4f;--glow:#ffc98c;--mint:#e59a4f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--violet);text-underline-offset:.18em}
+a:hover{color:var(--glow)}
+:focus-visible{outline:2px solid var(--glow);outline-offset:3px;border-radius:4px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.studio{color:var(--mute);text-decoration:none;font-size:.9rem;white-space:nowrap}
+.studio b{font:600 1rem Fraunces,serif;color:var(--ink)}
+.studio i{font-family:Fraunces,serif;color:var(--violet)}
+nav{display:flex;gap:1.4rem;font-size:.92rem}
+nav a{color:var(--mute);text-decoration:none;white-space:nowrap}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:2.5rem;padding-top:4.5rem;padding-bottom:4rem}
+.title{display:flex;align-items:center;gap:1.1rem;margin-bottom:1.4rem}
+.title img{width:84px;height:84px;border-radius:20px;box-shadow:0 0 0 1px var(--line),0 10px 40px -10px #e59a4f55}
+h1{font:500 clamp(2.6rem,6vw,4rem)/1 Fraunces,serif;margin:0;letter-spacing:-.01em}
+.kind{color:var(--mute);font-size:.92rem;margin-top:.35rem}
+.lede{font:italic 400 1.45rem/1.4 Fraunces,serif;color:var(--glow);margin:0 0 1rem;max-width:30ch}
+.hero p{max-width:36rem;color:#d9d3c8}
+.status{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--mint);margin-top:.6rem}
+.status:before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint)}
+.shots{display:flex;gap:1rem;justify-content:center;min-width:0}
+.hero>div{min-width:0}
+.shots img{width:31%;max-width:190px;height:auto;min-width:0;border-radius:18px;border:1px solid var(--line);box-shadow:0 20px 50px -20px #000}
+.shots img:nth-child(2){transform:translateY(-1.6rem)}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font:500 2rem/1.15 Fraunces,serif;margin:0 0 1.5rem}
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.mode{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:1.4rem}
+.mode h3{font:600 1.2rem Fraunces,serif;margin:0 0 .4rem;color:var(--ink)}
+.mode p{margin:0;color:var(--mute);font-size:.98rem}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2rem;padding:0;list-style:none}
+.facts li{border-top:1px solid var(--line);padding-top:.7rem;color:var(--mute);font-size:.95rem}
+.facts b{display:block;color:var(--ink);font-weight:600}
+.cols{display:grid;grid-template-columns:14rem 1fr;gap:2.5rem}
+.cols h2{margin:0}
+.prose h3{font:600 1.1rem Fraunces,serif;margin:1.6rem 0 .3rem}
+.prose h3:first-child{margin-top:0}
+.prose p{margin:0 0 .8rem;color:#d9d3c8;max-width:42rem}
+.updated{color:var(--mute);font-size:.9rem}
+.mail{font:500 1.35rem Fraunces,serif}
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--mute);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:2.5rem;padding-top:3rem}.modes{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr;gap:1rem}}
+@media (max-width:480px){nav{gap:1rem;font-size:.85rem}nav .opt{display:none}.title img{width:68px;height:68px}.facts{grid-template-columns:1fr}.lede{font-size:1.25rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="studio" href="/"><b>Clarke</b> <i>Studios</i></a>
+  <nav><a class="opt" href="#play">The game</a><a href="#privacy">Privacy</a><a href="#support">Support</a></nav>
+</div></header>
+<main>
+<div class="wrap hero" id="play">
+  <div>
+    <div class="title"><img src="img/icon.webp" alt="Rust &amp; Shine app icon" width="84" height="84"><div><h1>Rust &amp; Shine</h1><div class="kind">Restoration · iPhone</div></div></div>
+    <p class="lede">Scrub old tools back to new.</p>
+    <p>Every workshop has a drawer of tools nobody has touched in years. Pull one out and bring it back: clear the grease, wire-brush the rust, then polish it until the light runs across it.</p>
+    <span class="status">In development, coming to the App Store</span>
+  </div>
+  <div class="shots"><img src="img/workshop.webp" width="600" height="1304" alt="The workshop wall: eight objects on a pegboard, with the ones you have restored shining."><img src="img/wire-brush.webp" width="600" height="1304" alt="Wire-brushing orange rust off a chrome hubcap with a finger." loading="lazy"><img src="img/good-as-new.webp" width="600" height="1304" alt="A restored piece, gleaming, with the time it took." loading="lazy"></div>
+</div>
+
+<section><div class="wrap">
+  <h2>What's inside</h2>
+  <div class="modes"><div class="mode"><h3>Eight objects</h3><p>A wrench, claw hammer, pliers, brass padlock, kitchen knife, chrome hubcap, garden trowel and brass bell.</p></div><div class="mode"><h3>Three tools</h3><p>Degrease, wire brush, polish. Each stage reveals the next, and each object fights back a little differently.</p></div><div class="mode"><h3>Sound that follows you</h3><p>Scrub faster and the brush gets louder. Every sound is made live by the game, not a recording.</p></div></div>
+  <ul class="facts"><li><b>Controls</b>Drag one finger</li><li><b>Length</b>A few minutes per object</li><li><b>Online</b>Plays fully offline</li><li><b>Privacy</b>No ads, no account, no tracking</li></ul>
+</div></section>
+
+<section id="privacy"><div class="wrap cols">
+  <h2>Privacy</h2>
+  <div class="prose">
+    <p class="updated">Last updated November 2026.</p>
+    <h3>What we collect</h3>
+    <p>Nothing. Rust &amp; Shine has no accounts, no ads and no analytics, and it never connects to the internet. Your progress, best times and sound setting are saved on your device and never sent to us.</p>
+    <h3>Children</h3>
+    <p>The game doesn't collect personal information from anyone, including children.</p>
+    <h3>Changes</h3>
+    <p>If a future version adds anything that collects data, we'll update this page and the App Store privacy details first.</p>
+  </div>
+</div></section>
+
+<section id="support"><div class="wrap cols">
+  <h2>Support</h2>
+  <div class="prose">
+    <p>Email <a class="mail" href="mailto:support@clarkestudios.com">support@clarkestudios.com</a></p>
+    <p>Tell us your device and what happened. A real person reads every message, usually within two business days.</p>
+    <h3>How do I finish a stage?</h3>
+    <p>Keep scrubbing until the meter reaches the end. The tool changes on its own when a stage is done.</p>
+    <h3>How do I unlock the next object?</h3>
+    <p>Finish the object before it. Finished pieces hang on the workshop wall, where you can replay them to beat your time.</p>
+    <h3>Can I turn the sound off?</h3>
+    <p>Yes. Tap the sound button on the workshop wall.</p>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 <a href="/">Clarke Studios</a></span>
+  <a href="mailto:support@clarkestudios.com">support@clarkestudios.com</a>
+</div></footer>
+</body>
+</html>
