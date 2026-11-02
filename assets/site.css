@@ -58,6 +58,7 @@ a:hover { color: var(--ink); }
   background: var(--g-bg); color: var(--g-ink); border-radius: var(--radius); overflow: hidden;
   display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); min-height: 30rem; }
 .game.fh { --g-bg: #0d2a33; --g-ink: #f1ead8; --g-mute: #b9c6c2; --g-accent: #e8c98a; --g-rule: rgba(241,234,216,.16); }
+.game.ch { --g-bg: #140c2c; --g-ink: #ece6ff; --g-mute: #aea3cf; --g-accent: #c4a2ff; --g-rule: rgba(236,230,255,.14); }
 .game.pa { --g-bg: #0b1013; --g-ink: #e8eef2; --g-mute: #9fb0b8; --g-accent: #ffb347; --g-rule: rgba(232,238,242,.14); }
 .game .body { padding: clamp(1.5rem, 4vw, 3rem); display: flex; flex-direction: column; gap: 1.25rem; }
 .game .id { display: flex; align-items: center; gap: 1rem; }
